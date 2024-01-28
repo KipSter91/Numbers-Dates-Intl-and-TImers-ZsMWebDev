@@ -194,3 +194,24 @@ console.log('string' + 20n); //string20
 //Divisions
 console.log(10n / 3n); //3n - returns a BigInt number - rounds off the number to the nearest integer
 console.log(10 / 3); //3.3333333333333335 - returns a regular number
+
+//5) Creating Dates
+const currentDate = new Date();
+console.log(currentDate);
+
+const myBirthDay = new Date(1991, 2, 21);
+console.log(myBirthDay);
+
+console.log(new Date(7 * 24 * 60 * 60 * 1000));
+
+const wifesBirthDay = new Date(1987, 8, 25, 7, 5, 45);
+console.log(wifesBirthDay.getFullYear());
+console.log(wifesBirthDay.getMonth());
+console.log(wifesBirthDay.getDate());
+console.log(wifesBirthDay.getHours());
+console.log(wifesBirthDay.getMinutes());
+console.log(wifesBirthDay.getSeconds());
+console.log(wifesBirthDay.toISOString());
+
+const now = Date.now();
+console.log(now);
