@@ -147,3 +147,50 @@ const accountNumber = 123456789;
 const accountNumber2 = 123_456_789;
 //both are same
 console.log(accountNumber === accountNumber2); //true
+
+//4) Working with BigInt
+//BigInt is a new primitive type in JS
+//BigInt is a special type of number
+//BigInt is denoted by adding n at the end of the number
+//BigInt is used to store large numbers
+//BigInt is a new feature in ES2020
+
+//BigInt
+console.log(2 ** 53 - 1); //9007199254740991
+//below is a the biggest number that can be stored in JS
+console.log(Number.MAX_SAFE_INTEGER); //9007199254740991
+
+console.log(2 ** 53 + 1); //9007199254740992 - this is wrong
+console.log(2 ** 53 + 2); //9007199254740994 - this is wrong
+console.log(2 ** 53 + 3); //9007199254740996 - this is wrong
+console.log(2 ** 53 + 4); //9007199254740996 - this is wrong
+
+//BigInt
+const bigInt1 = 1234567890123456789012345678901234567890n;
+const bigInt2 = BigInt("9876543210987654321098765432109876543210");
+
+const sum = bigInt1 + bigInt2;
+console.log(sum);
+const product = bigInt1 * bigInt2;
+console.log(product);
+const power = bigInt1 ** 10n;
+console.log(power);
+
+//Operations on BigInt
+console.log(10000n + 10000n);
+
+//you are not allowed to mix BigInt with regular numbers
+//console.log(10000n + 10000); //TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//Exceptions
+console.log(20n > 15); //true
+console.log(20n === 20); //false
+console.log(typeof 20n); //bigint
+console.log(20n == '20'); //true
+
+//string concatenation
+console.log('string' + 20n); //string20
+
+//Divisions
+console.log(10n / 3n); //3n - returns a BigInt number - rounds off the number to the nearest integer
+console.log(10 / 3); //3.3333333333333335 - returns a regular number
