@@ -130,3 +130,20 @@ const isEven = n => {
 console.log(isEven(8)); //true
 console.log(isEven(23)); //false
 console.log(isEven(514)); //true
+
+//Numeric separators
+//makes the number easier to read
+//we can use _ to separate numbers
+console.log(1_000_000); //1000000
+console.log(10_000_000); //10000000
+
+//we camt use _ at the beginning or end of a number
+//console.log(_100); //SyntaxError: Invalid or unexpected token
+//console.log(100_); //SyntaxError: Invalid or unexpected token
+
+//from API we get a number like this
+const accountNumber = 123456789;
+//we can use _ to separate numbers
+const accountNumber2 = 123_456_789;
+//both are same
+console.log(accountNumber === accountNumber2); //true
