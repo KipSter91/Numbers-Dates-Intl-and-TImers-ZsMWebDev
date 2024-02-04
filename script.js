@@ -213,5 +213,35 @@ console.log(wifesBirthDay.getMinutes());
 console.log(wifesBirthDay.getSeconds());
 console.log(wifesBirthDay.toISOString());
 
-const now = Date.now();
-console.log(now);
+const now = Date.now(); //returns the current date in milliseconds
+const formattedNow = new Date(now); //converts the milliseconds to a date
+console.log(now, formattedNow);
+
+//7) Internationalizing Numbers
+const num = 3884764.23;
+const options = {
+  style: 'currency',
+  unit: 'celsius',
+  currency: 'EUR'
+};
+console.log('US: ', new Intl.NumberFormat('en-US', options).format(num));
+console.log('Germany: ', new Intl.NumberFormat('de-DE', options).format(num));
+console.log('Syria: ', new Intl.NumberFormat('ar-SY', options).format(num));
+console.log('India: ', new Intl.NumberFormat('en-IN', options).format(num));
+
+//8) Timers: setTimeout and setInterval
+//setTimeout
+//executes the function after the specified time once
+//returns a unique id
+//clearTimeout is used to cancel the setTimeout
+const timeout = setTimeout(() => console.log('Here is your pizza'), 3000);
+console.log('Waiting...');
+if (timeout) clearTimeout(timeout);
+
+//setInterval
+//executes the function after the specified time repeatedly
+//returns a unique id
+//clearInterval is used to cancel the setInterval 
+const interval = setInterval(() => console.log('Here is your pizza'), 3000);
+console.log('Waiting...');
+if (interval) clearInterval(interval);
